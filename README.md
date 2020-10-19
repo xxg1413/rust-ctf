@@ -1,9 +1,9 @@
-# rust-ctf
+# rust ctfs & writeups
 
 rust ctf writeups
 
 
-[Rust CVEs](https://github.com/xxg1413/rust-security)
+more: [Rust CVEs](https://github.com/xxg1413/rust-security)
 
 ## tasks & writeups
 
