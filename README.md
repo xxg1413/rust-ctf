@@ -8,7 +8,6 @@ rust ctf writeups
 ## tasks & writeups
 
 - VolgaCTF 2017 Quals: [Transformer](https://ctftime.org/task/3695)
-
 <br/>
 
 - Hack.lu CTF 2018：[Rusty CodePad](https://ctftime.org/task/6866)
@@ -18,10 +17,9 @@ rust ctf writeups
 - Google Capture The Flag 2018 (Quals): [DogeStore](https://ctftime.org/task/6226)
 - RuCTFE 2018:[radiowave](https://ctftime.org/task/7014)
 - 35C3 CTF 2018: [JuniorCTF - ultra secret](https://ctftime.org/task/7429)
-
 <br/>
 
-- hack.lu-ctf-2019: Gambling Future
+- hack.lu-ctf-2019: [Gambling Future](https://ctftime.org/task/9607)
 - De1CTF 2019:[BabyRust](https://ctftime.org/task/8920)
 - Google Capture The Flag 2019 (Quals):[Sandstone](https://ctftime.org/task/8800)
 - CSAW CTF Final Round 2019:[macrypto](https://ctftime.org/task/9840)
@@ -30,7 +28,6 @@ rust ctf writeups
 - Insomni'hack teaser 2019:[1118daysober](https://ctftime.org/task/7459)
 - Insomni'hack teaser 2019:[beginner_reverse](https://ctftime.org/task/7455)
 - DEF CON CTF Qualifier 2019: [gloryhost](https://ctftime.org/task/8550)
-
 <br/>
 
 - BSidesSF 2020 CTF:[config-me](https://ctftime.org/task/10528)
@@ -46,7 +43,9 @@ rust ctf writeups
 <br/>
 
 
-
 ## 中文题解
+
+TODO
+
 
 
