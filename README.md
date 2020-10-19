@@ -3,7 +3,7 @@
 rust ctf writeups
 
 
-[rust cve](https://github.com/xxg1413/rust-security)
+[Rust CVEs](https://github.com/xxg1413/rust-security)
 
 ## tasks & writeups
 
