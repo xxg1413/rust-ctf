@@ -1,6 +1,52 @@
 ## transformer
 
 We've got a file that was processed with a binary called transformer. We really need the contents of this file. Can you help?
+
+## 探索
+
+在Mac上执行程序：
+
+    [Transformer] ./transformer
+    zsh: exec format error: ./transformer
+
+使用file 查看 文件属性
+
+    [Transformer] file transformer
+    transformer: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 2.6.32, BuildID[sha1]=3ba9baed5d1738eef040f333ec9c4707c3aeabf4, with debug_info, not stripped
+
+发现是 64 位 Linux 二进制文件，拿到Linux系统下运行
+
+    ➜  Transformer git:(main) ✗ ./transformer
+    Usage: transformer <input_file> <output_file>
+
+
+使用ldd 看看调用的库
+
+    ➜  Transformer git:(main) ✗ ldd ./transformer
+            linux-vdso.so.1 (0x00007ffc0c1ed000)
+            libdl.so.2 => /lib/x86_64-linux-gnu/libdl.so.2 (0x00007fdccaf82000)
+            librt.so.1 => /lib/x86_64-linux-gnu/librt.so.1 (0x00007fdccaf77000)
+            libpthread.so.0 => /lib/x86_64-linux-gnu/libpthread.so.0 (0x00007fdccaf55000)
+            libgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007fdccaf3b000)
+            libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007fdccad76000)
+            /lib64/ld-linux-x86-64.so.2 (0x00007fdccb1f5000)
+
+
+我们尝试调用一下这个程序，构造一个输入文件:
+
+    ➜  Transformer git:(main) ✗ ./transformer input.txt output.txt
+    ➜  Transformer git:(main) ✗ cat input.txt output.txt
+    123456
+    uV���7�#  
+
+123456 输入，输出的内容看不懂，有乱码， 文件类型为data，文件大小由7 bit变成了12 bit
+
+用IDA打开二进制文件，发现使用了RC5库
+
+![](./ida.png)
+
+
+
 We have an unstripped ELF 64-bit Linux binary of something that looks like an encryption application, along with an encrypted file named ciphertext.zip.enc.
 
 After loading the binary in IDA, we immediately see it's written in Rust. We also have plenty debug info, which makes it more bearable. Before jumping to reversing, let's play around with it a bit to get a feel for it and maybe make our lives easier.
